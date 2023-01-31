@@ -1,0 +1,439 @@
+21:35:53 **** Build of configuration Debug for project Mini_Project_3 ****
+make all 
+Building file: ../Application.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega16 -DF_CPU=1000000UL -MMD -MP -MF"Application.d" -MT"Application.o" -c -o "Application.o" "../Application.c"
+Finished building: ../Application.c
+ 
+Building file: ../dc_motor.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega16 -DF_CPU=1000000UL -MMD -MP -MF"dc_motor.d" -MT"dc_motor.o" -c -o "dc_motor.o" "../dc_motor.c"
+../dc_motor.c: In function 'DcMotor_Rotate':
+../dc_motor.c:63: warning: implicit declaration of function 'PWM_Timer0_Start'
+Finished building: ../dc_motor.c
+ 
+Building file: ../gpio.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega16 -DF_CPU=1000000UL -MMD -MP -MF"gpio.d" -MT"gpio.o" -c -o "gpio.o" "../gpio.c"
+Finished building: ../gpio.c
+ 
+Building file: ../lcd.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega16 -DF_CPU=1000000UL -MMD -MP -MF"lcd.d" -MT"lcd.o" -c -o "lcd.o" "../lcd.c"
+In file included from ../lcd.c:18:
+c:/winavr-20100110/lib/gcc/../../avr/include/util/delay.h:90:3: warning: #warning "Compiler optimizations disabled; functions from <util/delay.h> won't work as designed"
+../lcd.c: In function 'LCD_intgerToString':
+../lcd.c:215: warning: implicit declaration of function 'itoa'
+Finished building: ../lcd.c
+ 
+Building file: ../lm35.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega16 -DF_CPU=1000000UL -MMD -MP -MF"lm35.d" -MT"lm35.o" -c -o "lm35.o" "../lm35.c"
+Finished building: ../lm35.c
+ 
+Building file: ../pwm.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega16 -DF_CPU=1000000UL -MMD -MP -MF"pwm.d" -MT"pwm.o" -c -o "pwm.o" "../pwm.c"
+Finished building: ../pwm.c
+ 
+Building target: Mini_Project_3.elf
+Invoking: AVR C Linker
+avr-gcc -Wl,-Map,Mini_Project_3.map -mmcu=atmega16 -o "Mini_Project_3.elf"  ./Application.o ./dc_motor.o ./gpio.o ./lcd.o ./lm35.o ./pwm.o   
+./Application.o: In function `Drivers_Init':
+../Application.c:43: undefined reference to `ADC_init'
+./lm35.o: In function `LM35_getTemperature':
+../lm35.c:30: undefined reference to `ADC_readChannel'
+make: *** [Mini_Project_3.elf] Error 1
+"make all" terminated with exit code 2. Build might be incomplete.
+21:36:01 **** Incremental Build of configuration Debug for project Mini_Project_3 ****
+make all 
+Building target: Mini_Project_3.elf
+Invoking: AVR C Linker
+avr-gcc -Wl,-Map,Mini_Project_3.map -mmcu=atmega16 -o "Mini_Project_3.elf"  ./Application.o ./dc_motor.o ./gpio.o ./lcd.o ./lm35.o ./pwm.o   
+./Application.o: In function `Drivers_Init':
+../Application.c:43: undefined reference to `ADC_init'
+./lm35.o: In function `LM35_getTemperature':
+../lm35.c:30: undefined reference to `ADC_readChannel'
+make: *** [Mini_Project_3.elf] Error 1
+"make all" terminated with exit code 2. Build might be incomplete.
+21:36:38 **** Incremental Build of configuration Debug for project Mini_Project_3 ****
+make all 
+Building target: Mini_Project_3.elf
+Invoking: AVR C Linker
+avr-gcc -Wl,-Map,Mini_Project_3.map -mmcu=atmega16 -o "Mini_Project_3.elf"  ./Application.o ./dc_motor.o ./gpio.o ./lcd.o ./lm35.o ./pwm.o   
+./Application.o: In function `Drivers_Init':
+../Application.c:43: undefined reference to `ADC_init'
+./lm35.o: In function `LM35_getTemperature':
+../lm35.c:30: undefined reference to `ADC_readChannel'
+make: *** [Mini_Project_3.elf] Error 1
+"make all" terminated with exit code 2. Build might be incomplete.
+21:36:43 **** Incremental Build of configuration Debug for project Mini_Project_3 ****
+make all 
+Building target: Mini_Project_3.elf
+Invoking: AVR C Linker
+avr-gcc -Wl,-Map,Mini_Project_3.map -mmcu=atmega16 -o "Mini_Project_3.elf"  ./Application.o ./dc_motor.o ./gpio.o ./lcd.o ./lm35.o ./pwm.o   
+./Application.o: In function `Drivers_Init':
+../Application.c:43: undefined reference to `ADC_init'
+./lm35.o: In function `LM35_getTemperature':
+../lm35.c:30: undefined reference to `ADC_readChannel'
+make: *** [Mini_Project_3.elf] Error 1
+"make all" terminated with exit code 2. Build might be incomplete.
+21:37:24 **** Incremental Build of configuration Debug for project Mini_Project_3 ****
+make all 
+Building target: Mini_Project_3.elf
+Invoking: AVR C Linker
+avr-gcc -Wl,-Map,Mini_Project_3.map -mmcu=atmega16 -o "Mini_Project_3.elf"  ./Application.o ./dc_motor.o ./gpio.o ./lcd.o ./lm35.o ./pwm.o   
+./Application.o: In function `Drivers_Init':
+../Application.c:43: undefined reference to `ADC_init'
+./lm35.o: In function `LM35_getTemperature':
+../lm35.c:30: undefined reference to `ADC_readChannel'
+make: *** [Mini_Project_3.elf] Error 1
+"make all" terminated with exit code 2. Build might be incomplete.
+21:37:37 **** Incremental Build of configuration Debug for project Mini_Project_3 ****
+make all 
+Building file: ../Application.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega16 -DF_CPU=1000000UL -MMD -MP -MF"Application.d" -MT"Application.o" -c -o "Application.o" "../Application.c"
+Finished building: ../Application.c
+ 
+Building file: ../adc.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega16 -DF_CPU=1000000UL -MMD -MP -MF"adc.d" -MT"adc.o" -c -o "adc.o" "../adc.c"
+Finished building: ../adc.c
+ 
+Building file: ../dc_motor.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega16 -DF_CPU=1000000UL -MMD -MP -MF"dc_motor.d" -MT"dc_motor.o" -c -o "dc_motor.o" "../dc_motor.c"
+../dc_motor.c: In function 'DcMotor_Rotate':
+../dc_motor.c:63: warning: implicit declaration of function 'PWM_Timer0_Start'
+Finished building: ../dc_motor.c
+ 
+Building file: ../gpio.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega16 -DF_CPU=1000000UL -MMD -MP -MF"gpio.d" -MT"gpio.o" -c -o "gpio.o" "../gpio.c"
+Finished building: ../gpio.c
+ 
+Building file: ../lcd.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega16 -DF_CPU=1000000UL -MMD -MP -MF"lcd.d" -MT"lcd.o" -c -o "lcd.o" "../lcd.c"
+In file included from ../lcd.c:18:
+c:/winavr-20100110/lib/gcc/../../avr/include/util/delay.h:90:3: warning: #warning "Compiler optimizations disabled; functions from <util/delay.h> won't work as designed"
+../lcd.c: In function 'LCD_intgerToString':
+../lcd.c:215: warning: implicit declaration of function 'itoa'
+Finished building: ../lcd.c
+ 
+Building file: ../lm35.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega16 -DF_CPU=1000000UL -MMD -MP -MF"lm35.d" -MT"lm35.o" -c -o "lm35.o" "../lm35.c"
+Finished building: ../lm35.c
+ 
+Building file: ../pwm.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega16 -DF_CPU=1000000UL -MMD -MP -MF"pwm.d" -MT"pwm.o" -c -o "pwm.o" "../pwm.c"
+Finished building: ../pwm.c
+ 
+Building target: Mini_Project_3.elf
+Invoking: AVR C Linker
+avr-gcc -Wl,-Map,Mini_Project_3.map -mmcu=atmega16 -o "Mini_Project_3.elf"  ./Application.o ./adc.o ./dc_motor.o ./gpio.o ./lcd.o ./lm35.o ./pwm.o   
+Finished building target: Mini_Project_3.elf
+ 
+Invoking: AVR Create Extended Listing
+avr-objdump -h -S Mini_Project_3.elf  >"Mini_Project_3.lss"
+Finished building: Mini_Project_3.lss
+ 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega16 Mini_Project_3.elf
+AVR Memory Usage
+----------------
+Device: atmega16
+
+Program:    9840 bytes (60.1% Full)
+(.text + .data + .bootloader)
+
+Data:        297 bytes (29.0% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+21:37:52 **** Incremental Build of configuration Debug for project Mini_Project_3 ****
+make all 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega16 Mini_Project_3.elf
+AVR Memory Usage
+----------------
+Device: atmega16
+
+Program:    9840 bytes (60.1% Full)
+(.text + .data + .bootloader)
+
+Data:        297 bytes (29.0% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+21:39:22 **** Incremental Build of configuration Debug for project Mini_Project_3 ****
+make all 
+Building target: Mini_Project_3.elf
+Invoking: AVR C Linker
+avr-gcc -Wl,-Map,Mini_Project_3.map -mmcu=atmega16 -o "Mini_Project_3.elf"  ./Application.o ./adc.o ./dc_motor.o ./gpio.o ./lcd.o ./lm35.o ./pwm.o   
+Finished building target: Mini_Project_3.elf
+ 
+Invoking: AVR Create Extended Listing
+avr-objdump -h -S Mini_Project_3.elf  >"Mini_Project_3.lss"
+Finished building: Mini_Project_3.lss
+ 
+Create Flash image (ihex format)
+avr-objcopy -R .eeprom -R .fuse -R .lock -R .signature -O ihex Mini_Project_3.elf  "Mini_Project_3.hex"
+Finished building: Mini_Project_3.hex
+ 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega16 Mini_Project_3.elf
+AVR Memory Usage
+----------------
+Device: atmega16
+
+Program:    9840 bytes (60.1% Full)
+(.text + .data + .bootloader)
+
+Data:        297 bytes (29.0% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+22:05:48 **** Incremental Build of configuration Debug for project Mini_Project_3 ****
+make all 
+Building file: ../Application.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega16 -DF_CPU=1000000UL -MMD -MP -MF"Application.d" -MT"Application.o" -c -o "Application.o" "../Application.c"
+Finished building: ../Application.c
+ 
+Building target: Mini_Project_3.elf
+Invoking: AVR C Linker
+avr-gcc -Wl,-Map,Mini_Project_3.map -mmcu=atmega16 -o "Mini_Project_3.elf"  ./Application.o ./adc.o ./dc_motor.o ./gpio.o ./lcd.o ./lm35.o ./pwm.o   
+Finished building target: Mini_Project_3.elf
+ 
+Invoking: AVR Create Extended Listing
+avr-objdump -h -S Mini_Project_3.elf  >"Mini_Project_3.lss"
+Finished building: Mini_Project_3.lss
+ 
+Create Flash image (ihex format)
+avr-objcopy -R .eeprom -R .fuse -R .lock -R .signature -O ihex Mini_Project_3.elf  "Mini_Project_3.hex"
+Finished building: Mini_Project_3.hex
+ 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega16 Mini_Project_3.elf
+AVR Memory Usage
+----------------
+Device: atmega16
+
+Program:    9840 bytes (60.1% Full)
+(.text + .data + .bootloader)
+
+Data:        297 bytes (29.0% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+22:11:05 **** Incremental Build of configuration Debug for project Mini_Project_3 ****
+make all 
+Building file: ../dc_motor.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega16 -DF_CPU=1000000UL -MMD -MP -MF"dc_motor.d" -MT"dc_motor.o" -c -o "dc_motor.o" "../dc_motor.c"
+../dc_motor.c: In function 'DcMotor_Rotate':
+../dc_motor.c:64: warning: implicit declaration of function 'PWM_Timer0_Start'
+Finished building: ../dc_motor.c
+ 
+Building target: Mini_Project_3.elf
+Invoking: AVR C Linker
+avr-gcc -Wl,-Map,Mini_Project_3.map -mmcu=atmega16 -o "Mini_Project_3.elf"  ./Application.o ./adc.o ./dc_motor.o ./gpio.o ./lcd.o ./lm35.o ./pwm.o   
+Finished building target: Mini_Project_3.elf
+ 
+Invoking: AVR Create Extended Listing
+avr-objdump -h -S Mini_Project_3.elf  >"Mini_Project_3.lss"
+Finished building: Mini_Project_3.lss
+ 
+Create Flash image (ihex format)
+avr-objcopy -R .eeprom -R .fuse -R .lock -R .signature -O ihex Mini_Project_3.elf  "Mini_Project_3.hex"
+Finished building: Mini_Project_3.hex
+ 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega16 Mini_Project_3.elf
+AVR Memory Usage
+----------------
+Device: atmega16
+
+Program:    9846 bytes (60.1% Full)
+(.text + .data + .bootloader)
+
+Data:        297 bytes (29.0% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+22:11:16 **** Incremental Build of configuration Debug for project Mini_Project_3 ****
+make all 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega16 Mini_Project_3.elf
+AVR Memory Usage
+----------------
+Device: atmega16
+
+Program:    9846 bytes (60.1% Full)
+(.text + .data + .bootloader)
+
+Data:        297 bytes (29.0% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+22:31:38 **** Incremental Build of configuration Debug for project Mini_Project_3 ****
+make all 
+Building file: ../pwm.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega16 -DF_CPU=1000000UL -MMD -MP -MF"pwm.d" -MT"pwm.o" -c -o "pwm.o" "../pwm.c"
+Finished building: ../pwm.c
+ 
+Building target: Mini_Project_3.elf
+Invoking: AVR C Linker
+avr-gcc -Wl,-Map,Mini_Project_3.map -mmcu=atmega16 -o "Mini_Project_3.elf"  ./Application.o ./adc.o ./dc_motor.o ./gpio.o ./lcd.o ./lm35.o ./pwm.o   
+Finished building target: Mini_Project_3.elf
+ 
+Invoking: AVR Create Extended Listing
+avr-objdump -h -S Mini_Project_3.elf  >"Mini_Project_3.lss"
+Finished building: Mini_Project_3.lss
+ 
+Create Flash image (ihex format)
+avr-objcopy -R .eeprom -R .fuse -R .lock -R .signature -O ihex Mini_Project_3.elf  "Mini_Project_3.hex"
+Finished building: Mini_Project_3.hex
+ 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega16 Mini_Project_3.elf
+AVR Memory Usage
+----------------
+Device: atmega16
+
+Program:    9880 bytes (60.3% Full)
+(.text + .data + .bootloader)
+
+Data:        297 bytes (29.0% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+22:31:48 **** Incremental Build of configuration Debug for project Mini_Project_3 ****
+make all 
+Building file: ../dc_motor.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega16 -DF_CPU=1000000UL -MMD -MP -MF"dc_motor.d" -MT"dc_motor.o" -c -o "dc_motor.o" "../dc_motor.c"
+../dc_motor.c: In function 'DcMotor_Rotate':
+../dc_motor.c:66: warning: implicit declaration of function 'PWM_Timer0_Start'
+../dc_motor.c:69: warning: implicit declaration of function 'PWM_Timer0_End'
+Finished building: ../dc_motor.c
+ 
+Building target: Mini_Project_3.elf
+Invoking: AVR C Linker
+avr-gcc -Wl,-Map,Mini_Project_3.map -mmcu=atmega16 -o "Mini_Project_3.elf"  ./Application.o ./adc.o ./dc_motor.o ./gpio.o ./lcd.o ./lm35.o ./pwm.o   
+Finished building target: Mini_Project_3.elf
+ 
+Invoking: AVR Create Extended Listing
+avr-objdump -h -S Mini_Project_3.elf  >"Mini_Project_3.lss"
+Finished building: Mini_Project_3.lss
+ 
+Create Flash image (ihex format)
+avr-objcopy -R .eeprom -R .fuse -R .lock -R .signature -O ihex Mini_Project_3.elf  "Mini_Project_3.hex"
+Finished building: Mini_Project_3.hex
+ 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega16 Mini_Project_3.elf
+AVR Memory Usage
+----------------
+Device: atmega16
+
+Program:    9886 bytes (60.3% Full)
+(.text + .data + .bootloader)
+
+Data:        297 bytes (29.0% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+22:31:51 **** Incremental Build of configuration Debug for project Mini_Project_3 ****
+make all 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega16 Mini_Project_3.elf
+AVR Memory Usage
+----------------
+Device: atmega16
+
+Program:    9886 bytes (60.3% Full)
+(.text + .data + .bootloader)
+
+Data:        297 bytes (29.0% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+22:34:45 **** Incremental Build of configuration Debug for project Mini_Project_3 ****
+make all 
+Building file: ../dc_motor.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega16 -DF_CPU=1000000UL -MMD -MP -MF"dc_motor.d" -MT"dc_motor.o" -c -o "dc_motor.o" "../dc_motor.c"
+../dc_motor.c: In function 'DcMotor_Rotate':
+../dc_motor.c:66: warning: implicit declaration of function 'PWM_Timer0_Start'
+../dc_motor.c:69: warning: implicit declaration of function 'PWM_Timer0_End'
+Finished building: ../dc_motor.c
+ 
+Building target: Mini_Project_3.elf
+Invoking: AVR C Linker
+avr-gcc -Wl,-Map,Mini_Project_3.map -mmcu=atmega16 -o "Mini_Project_3.elf"  ./Application.o ./adc.o ./dc_motor.o ./gpio.o ./lcd.o ./lm35.o ./pwm.o   
+Finished building target: Mini_Project_3.elf
+ 
+Invoking: AVR Create Extended Listing
+avr-objdump -h -S Mini_Project_3.elf  >"Mini_Project_3.lss"
+Finished building: Mini_Project_3.lss
+ 
+Create Flash image (ihex format)
+avr-objcopy -R .eeprom -R .fuse -R .lock -R .signature -O ihex Mini_Project_3.elf  "Mini_Project_3.hex"
+Finished building: Mini_Project_3.hex
+ 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega16 Mini_Project_3.elf
+AVR Memory Usage
+----------------
+Device: atmega16
+
+Program:    9886 bytes (60.3% Full)
+(.text + .data + .bootloader)
+
+Data:        297 bytes (29.0% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+22:34:48 **** Incremental Build of configuration Debug for project Mini_Project_3 ****
+make all 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega16 Mini_Project_3.elf
+AVR Memory Usage
+----------------
+Device: atmega16
+
+Program:    9886 bytes (60.3% Full)
+(.text + .data + .bootloader)
+
+Data:        297 bytes (29.0% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 

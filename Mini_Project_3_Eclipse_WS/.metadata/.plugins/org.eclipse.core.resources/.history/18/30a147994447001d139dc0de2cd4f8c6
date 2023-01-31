@@ -1,0 +1,138 @@
+/***************************************************************************
+ *
+ * Module Name: LM35
+ *
+ * File Name: main.c
+ *
+ * Description: Source file
+ *
+ * Created on: Oct 7, 2022
+ *
+ * Author: Omar EL-Sheikh
+ *
+ **************************************************************************/
+
+/***************************************************************************
+ *								Inclusions
+ ***************************************************************************/
+#include "adc.h"
+#include "lcd.h"
+#include "lm35.h"
+#include "dc_motor.h"
+
+/***************************************************************************
+ *								Types Declarations
+ ***************************************************************************/
+/*Enumeration constants for different fan levels*/
+typedef enum Fan_Level {
+	OFF, FAN_LEVEL_1 = 25, FAN_LEVEL_2 = 50, FAN_LEVEL_3 = 75,
+	FAN_LEVEL_4 = 100
+} Fan_Level;
+
+
+/***************************************************************************
+ *								Functions Definitions
+ ***************************************************************************/
+/*
+ * Description:
+ * Function to initialize all the drivers connected to the MC
+ * */
+void Drivers_Init (const ADC_ConfigType * ADC_Configs){
+	LCD_init();
+	DcMotor_Init();
+	ADC_init(ADC_Configs);
+}
+
+/*
+ * Description:
+ * Function to set fan level based on the current speed
+ * */
+void Fan_setLevel(const uint8 * temperature, Fan_Level * level){
+
+	/*Static variable to store previous state to prevent generating the same PWM signal each iteration*/
+	static Fan_Level prevLevel = OFF;
+
+	if (*temperature < 30){
+		*level = OFF;
+	}
+	else if (30 <= *temperature && *temperature < 60){
+		*level = FAN_LEVEL_1;
+	}
+	else if (60 <= *temperature && *temperature < 90) {
+		*level = FAN_LEVEL_2;
+	}
+	else if (90 <= *temperature && *temperature < 120){
+		*level = FAN_LEVEL_3;
+	}
+	else {
+		*level = FAN_LEVEL_4;
+	}
+
+	/*DC Motor speed will only change if the the current level is different
+	 *  than the previous one
+	 *  This method will prevent generating the same PWM signal from the beginning
+	 * */
+	if (prevLevel != *level){
+		DcMotor_Rotate(CW, *level);
+	}
+	else if(*level == OFF) {
+		DcMotor_Rotate(STOP, *level);
+	}
+
+	prevLevel = *level;
+}
+
+/*
+ * Description:
+ * Function to display current fan status and temperature on LCD
+ * */
+void LCD_displayStatus(const uint8 * temperature, const Fan_Level * level){
+	LCD_moveCursor(0,11);
+	if (*level == OFF) {
+		LCD_displayString("OFF");
+	}
+	else {
+		LCD_displayString("ON ");
+	}
+
+	LCD_moveCursor(1,11);
+	LCD_intgerToString(*temperature);
+	if (*temperature > 99){
+		LCD_displayString(" C");
+	}
+	else {
+		LCD_displayString(" C ");
+	}
+}
+
+int main (){
+	/* Choosing configurations for ADC Driver */
+	ADC_ConfigType ADC_Configs = {INTERNAL_2_56, F_CPU_8};
+
+	/* Initializing all drivers */
+	Drivers_Init (&ADC_Configs);
+
+	/* Variable to store current temperature from sensor */
+	uint8 temperature;
+
+	/* Variable to store current fan level */
+	Fan_Level level = OFF;
+
+	LCD_moveCursor(0,4);
+	LCD_displayString("Fan is ");
+
+	LCD_moveCursor(1,4);
+	LCD_displayString("Temp = ");
+
+	/* Program Flow */
+	while (1){
+		/* Reading current temperature */
+		temperature = LM35_getTemperature(); /* Getting the temperature read from LM35 Sensor*/
+
+		/* Setting Fan Level based on temperature read */
+		Fan_setLevel(&temperature, &level);
+
+		/* Displaying current fan status and temperature */
+		LCD_displayStatus(&temperature, &level);
+	}
+}
